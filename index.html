@@ -12,6 +12,15 @@
                 background-color:yellow;
             }
 
+           li.new-list,div#new-div
+            div#id-div{
+                background-color:blue;
+            }
+
+            div.grandkids li{
+                background-color:red;
+            }
+
             li.my-list{
                 background-color:orange
             }
@@ -27,6 +36,7 @@
                 <li><a href="#id">id</a></li>
                 <li><a href="#class">class</a></li>
                 <li><a href="#compound">compound</a></li>
+                <li><a href="#descendant">descendant</a></li>
             </ul>
         </nav> 
     </header>           
@@ -44,7 +54,6 @@
 
 
             <p>Here's what it looks like:</p>
-            <div id="id-div">Inside my-div</div>
         </fieldset>
 
         <fieldset>
@@ -66,6 +75,43 @@
                     <li class="my-list">I'm inside an li with a class of my-list</li>
                 </ul>
             </div>
+        </fieldset>
+
+        <fieldset>
+            <legend><a id="compound">compound</a></legend>
+            <pre><code>id="id-div"</code></pre>
+            <p>Here's how the CSS is applied to the element:</p>
+            <pre><code>li.new-list,div#new-div{
+    background-color:blue;
+}</code></pre>
+
+            <p>Here's what it looks like:</p>
+            <div>
+                <ul>
+                    <li class="new-list">I'm inside new-list</li>
+                    <li class="new-list">I'm inside new-list</li>
+                    <li class="new-list">I'm inside new-list</li>
+                </ul>
+            </div>        
+        </fieldset>
+
+        <fieldset>
+            <legend><a id="descendant">descendant</a></legend>
+            <pre><code>id="id-div"</code>\\</pre>
+            <p>A descendant selector effects all elements inside the current element.</p>
+            <pre><code>li.new-list,div#new-div{
+    background-color:blue;
+}</code></pre>
+
+            <p>Here's what it looks like:</p>
+            
+            <div class="grandkids">
+                <ul>
+                    <li>I'm in the grandkids list</li>
+                    <li>I'm in the grandkids list</li>
+                    <li>I'm in the grandkids list</li>
+                </ul>
+            </div>        
         </fieldset>
 
         <footer class="page-footer">
